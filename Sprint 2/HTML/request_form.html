@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="form-container centered">
+    <h2>Commission Request Form</h2>
+    <form method="post" >
+        {% csrf_token %}
+        <div> First Name:{{form.f_name}}</div>
+        <div> Last Name:{{form.l_name}}</div>
+        <div>Email: {{form.email}}</div>
+        <div>Size:<br />{{form.width}}{{form.height}}</div>
+        <div>I'm looking to invest:<br />{{form.investment}}</div>
+        <div class="type-select">What type of art?{{form.type}}</div>
+        <div >Commission Details:{{form.details}}</div>
+        <div class="buttons">
+            <button type="submit" class="enter"><strong>Send</strong></button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

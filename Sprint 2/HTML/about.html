@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="artist-card">
+    <img src="{% static 'img/profile_pic.jpg' %}" alt="my-picture-here">
+    <div>
+        <h2>About Me </h2>
+        <p>{% lorem 1 b random %}</p>
+    </div>
+</div>
+
+
+<div class="card-container centered">
+    <div class="details-card">
+        <div class="card-title">EDUCATION</div>
+        <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quas?</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio!</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+    </div>
+    <div class="details-card">
+        <div class="card-title">EXHIBITION</div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex!</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, praesentium?</li>
+        </ul>
+
+    </div>
+    <div class="details-card">
+        <div class="card-title">PUBLICATION / PRODUCTION</div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, debitis aliquid.</li>
+            <li>Lorem ipsum dolor sit amet consectetur. </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="card-container centered">
+
+    <div class="details-card">
+        <div class="card-title">
+            HOBBIES
+        </div>
+        <ul>
+            <li>Music🎧🎹</li>
+            <li>Watching movies🍿</li>
+            <li>Coding🧑🏻‍💻</li>
+            <li>Video games🎮</li>
+        </ul>
+    </div>
+
+    <div class="details-card">
+        <div class="card-title">CONTACT</div>
+        <ul>
+            <li>
+                PH: +639 343 267 67
+            </li>
+            <li>
+                US: +1 307 413 9764
+            </li>
+        </ul>
+    </div>
+
+    <div class="details-card">
+        <ul>
+            <li><a href="mailto:mbitoon@up.edu.ph">mbitoon@up.edu.ph</a>
+            </li>
+            <li>
+                <a href="http://instagram.com/mictony06">@mictony06</a>
+            </li>
+            <li>
+                Mic is available for commissions and assignments both locally and abroad.
+            </li>
+            <form action="{% url 'request_form' %}">
+                <button type="submit" >Request for a Commission</button>
+            </form>
+        </ul>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock script %}

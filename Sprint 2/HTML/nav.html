@@ -1,0 +1,16 @@
+{% load static %}
+{% comment %} <a href="{% url 'home' %}" ><img id="logo" src="{% static 'img/logo.svg' %}" type="image/svg+xml"></a> {% endcomment %}
+
+<div class="title">
+    Michael Anthony Bitoon
+    <div class="sub-title">3D Artist</div>
+</div>
+<div class="nav">
+    <ul>
+        <li><a id="home" href="{% url 'home' %}">Home</a></li>
+        <li><a id="commissions" href="{% url 'commissions' %}">Commissions</a></li>
+        <li><a id="about" href="{% url 'about' %}">About</a></li>
+    </ul>
+
+
+</div>
