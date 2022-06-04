@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="centered">
+    <div class="item-card">
+        <div class="item-section">
+            <div class="item-title">
+                <h1>{{subject.title}}</h1>
+            </div>
+            <div class="item-desc">
+                <p>{{subject.description}}</p>
+            </div>
+        </div>
+        <div class="item-section">
+                <img id = "item-image" src="{{subject.image.url}}" alt="">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/detail.js' %}"></script>
+{% endblock script %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="centered">
+    <div class="top">
+        <div class="summary">
+            <h1>Hello,</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta asperiores provident enim, sunt
+                temporibus doloribus optio amet quae, eum earum porro minima consequatur corrupti assumenda, nam beatae
+                distinctio iure aliquam harum ipsam soluta in. Dolorem sed quo alias? Minus, molestiae recusandae quidem
+                quibusdam odit aspernatur nihil maxime temporibus officiis modi neque at quia magnam quisquam, iusto
+                itaque cum ea molestias quod! Nobis aliquid laboriosam ut officiis quibusdam consequatur doloribus
+                libero excepturi cupiditate eveniet distinctio nihil veniam, itaque, sit similique architecto.</p>
+        </div>
+
+        <div class="artist-profile">
+            <img src="{% static 'img/profile_pic.jpg' %}" alt="profile_pic">
+            <a href="{% url 'commissions' %}">
+                <div class="overlay"> See Gallery... </div>
+            </a>
+        </div>
+
+        <div class="event">
+            <div class="event-label">
+                <p>
+                    Upcoming Event
+                </p>
+                <img src="{% static 'img/sample_event_icon.svg' %}" alt="event_img">
+            </div>
+            <div class="event-banner">
+                <img src="{% static 'img/banner.jpg' %}" alt="event_banner_img">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="counter" class="page-break">
+</div>
+
+
+<div class="slideshow">
+    <div class="slide-label">Featured Works</div>
+
+    {% for asset in featured %}
+    <div class="slide">
+        {% if not asset.preview %}
+        <img src="{{asset.image.url}}" alt="slide_img">
+        {% else %}
+        <img src="{{asset.preview.url}}" alt="slide_img">
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock script %}
